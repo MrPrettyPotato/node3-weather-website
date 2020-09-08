@@ -13,7 +13,10 @@ const forecast = (long,lat,callback) => {
             const {name,country,region,lat,lon} = body.location
             const {temperature,wind_speed:windSpeed,feelslike} = body.current
              callback(undefined,{
-                 info: 'The temperature is :' + temperature + '° and it feels like '+ feelslike + ' with a windspeed of ' + windSpeed,
+                 info1: 'The temperature is :' + temperature + '° and it feels like '+ feelslike ,
+                 info2:' The windspeed is ' + windSpeed + ' and  goes to ' + body.current.wind_dir,
+                 weatherDiscription:body.current.weather_descriptions[0],
+                 humindity:body.current.humindity,
                  location: name,
                  country,
                  temperature,
